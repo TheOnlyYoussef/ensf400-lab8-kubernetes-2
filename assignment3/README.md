@@ -31,14 +31,18 @@ where assignment3 is the root folder, this command will apply all the yaml files
 
 ### Step 3: Accessing the Application
 
-You would have to forward port 3000 to 80 so run command:
+Enable ingress addon by:
 ```sh
- kubectl port-forward svc/my-nginx-svc 3000:80
- ```
-then in another terminal run 
-```sh
-curl http://localhost:3000
+minikube addons enable ingress
 ```
+
+Curl the website:
+```sh
+curl http://$(minikube ip)/
+```
+
+
+
 output:
 
 ![alt text](output.png)
